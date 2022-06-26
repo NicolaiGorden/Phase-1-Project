@@ -6,13 +6,27 @@
   .weapon-box {
     display: inline-block;
     border-radius: 25px;
+    margin:0;
+    padding:0;
     background: #777777;
+    background: repeating-linear-gradient(
+  45deg,
+  #bebebe,
+  #bebebe 15px,
+  #979797 15px,
+  #979797 30px
+);
     padding: 20px;
-    width: 400px;
-    height: 250px;
+    width: 450px;
+    height: 275px;
     font-family: 'Teko', sans-serif;
     text-align: center;
     vertical-align: center;
     line-height: 90px;
     font-size: 50px
+  }
+
+  .weapon-name {
+    font-size: 20px;
+    word-wrap:break-word;
   }
