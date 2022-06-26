@@ -1,0 +1,13 @@
+.parent {
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
+  .weapon-box {
+    display: inline-block;
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 400px;
+    height: 250px;
+  }
