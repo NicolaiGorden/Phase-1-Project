@@ -8,14 +8,12 @@ function retrieveData(){
         .then(res => res.json())
         .then(data => initializeWeapons(data))
 }
-//data.ars[0].name
-//data.smgs[0].name
 
 function initializeWeapons(weapons){
-    const primary = `${weapons.ars[0].name.toUpperCase()}
-    <img src=${weapons.ars[0].image}>`
-    const secondary = `${weapons.smgs[0].name.toUpperCase()}
-    <img src=${weapons.smgs[0].image}>`
+    const primary = `<div class="text">${weapons.ars[0].name.toUpperCase()}</div>
+    <div class="image"><img src=${weapons.ars[0].image}></div>`
+    const secondary = `<div class="text">${weapons.smgs[0].name.toUpperCase()}</div>
+    <div class="image"><img src=${weapons.smgs[0].image}></div>`
     const primaryBox = document.getElementById('primary')
     const secondaryBox = document.getElementById('secondary')
 
