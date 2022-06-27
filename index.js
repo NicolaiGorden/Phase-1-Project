@@ -1,3 +1,10 @@
-alert('hi')
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM Content Loaded!")
+    retrieveData();
+})
 
-//CREATE JSON WITH ALL WEAPONS AND ITEMS. WEAPONS GET A NAME ID AND IMAGE URL ID. EVERYTHING ELSE GETS JUST IMAGE URL ID.
+function retrieveData(){
+    fetch('http://localhost:3000/weapons')
+        .then(res => res.json())
+        .then(data => console.log(data))
+}
