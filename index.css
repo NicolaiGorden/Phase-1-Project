@@ -1,5 +1,5 @@
-.body {
-    background-image: url('https://earlygame.com/uploads/images/_1200x630_crop_center-center_82_none/Apex-Legends-worlds_edge.jpeg?mtime=1581182095');
+body, html {
+    height: 100%;
   }
 
 .parent {
@@ -17,7 +17,7 @@
     border-radius: 25px;
     margin:0;
     padding:0;
-    background: #757575;
+    background: rgba(134, 134, 134, 0.596) ;
   }
 
 .item-box-row {
@@ -91,4 +91,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.bgimg {
+    background-image: url(src/img/bg.jpg);
+    height: 100%;
 }

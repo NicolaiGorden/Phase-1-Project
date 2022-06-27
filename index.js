@@ -22,5 +22,8 @@ function initializeWeapons(weapons){
 }
 
 function initializeBackpack(){
-    
+    //map through all divs in backpack and fill them with shield cells
 }
+
+//when you click on an item in the item list, run a function that temporarily saves the item's name and image in two variables.
+//that way you can target those variables while dragging, and they will only take up space for a second.
