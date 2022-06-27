@@ -1,0 +1,16 @@
+{
+    "weapons": {
+        "ars": [
+            {
+                "name": "Havoc",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/3/3f/HAVOC_Rifle_Icon.svg/revision/latest?cb=20210806055242"
+            }
+        ],
+        "smgs": [
+            {
+                "name": "Alternator",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/8/86/Alternator_SMG_Icon.svg/revision/latest?cb=20210807022757"
+            }
+        ]
+    }
+}
