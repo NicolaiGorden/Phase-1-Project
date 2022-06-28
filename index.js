@@ -28,9 +28,6 @@ function initializeBackpack(items){
     [...document.getElementsByClassName('item-box')].map(i=>{
         i.innerHTML = `<img class = 'item-image' src="${items.health[0].image}" alt ="${items.health[0].name}"></img>`
     })
-    //create variable that is an array with all backpack divs as seperate items
-    //https://stackoverflow.com/questions/5338716/get-multiple-elements-by-id
-    //map through all divs in backpack and fill them with shield cells
 }
 
 //when you click on an item in the item list, run a function that temporarily saves the item's name and image in two variables.
