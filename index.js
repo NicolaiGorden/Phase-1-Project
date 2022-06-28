@@ -7,6 +7,9 @@ function retrieveData(){
     fetch('http://localhost:3000/weapons')
         .then(res => res.json())
         .then(data => initializeWeapons(data))
+    fetch('http://localhost:3000/items')
+        .then(res => res.json())
+        .then(data => initializeBackpack(data))
 }
 
 function initializeWeapons(weapons){
@@ -21,7 +24,12 @@ function initializeWeapons(weapons){
     secondaryBox.innerHTML = secondary
 }
 
-function initializeBackpack(){
+function initializeBackpack(items){
+    [...document.getElementsByClassName('item-box')].map(i=>{
+        i.innerHTML = `<img class = 'item-image' src="${items.health[0].image}" alt ="${items.health[0].name}"></img>`
+    })
+    //create variable that is an array with all backpack divs as seperate items
+    //https://stackoverflow.com/questions/5338716/get-multiple-elements-by-id
     //map through all divs in backpack and fill them with shield cells
 }
 

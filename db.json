@@ -126,5 +126,13 @@
                 "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/c/c4/Wingman_Icon.svg/revision/latest?cb=20210806054809"
             }
         ]
+    },
+    "items": {
+        "health": [
+            {
+                "name": "Shield Cell",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/4/4a/Shield_Cell.svg/revision/latest?cb=20210827060709"
+            }
+        ]
     }
 }
