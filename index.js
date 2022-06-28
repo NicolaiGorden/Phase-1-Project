@@ -10,10 +10,10 @@ function retrieveData(){
 }
 
 function initializeWeapons(weapons){
-    const primary = `<div class="text">${weapons.ars[0].name.toUpperCase()}</div>
-    <div class="image"><img src=${weapons.ars[0].image}></div>`
-    const secondary = `<div class="text">${weapons.smgs[0].name.toUpperCase()}</div>
-    <div class="image"><img src=${weapons.smgs[0].image}></div>`
+    const primary = `<div class="text">${weapons.pistol[2].name}</div>
+    <div class="image"><img src=${weapons.pistol[2].image}></div>`
+    const secondary = `<div class="text">${weapons.shotgun[3].name}</div>
+    <div class="image"><img src=${weapons.shotgun[3].image}></div>`
     const primaryBox = document.getElementById('primary')
     const secondaryBox = document.getElementById('secondary')
 
