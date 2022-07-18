@@ -1,3 +1,5 @@
+const weaponMenu = document.querySelector("#menu")
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const arButton = document.querySelector("#Assault-Rifles");
@@ -9,8 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const pistolButton = document.querySelector("#Pistols");
     const menuButton = document.querySelector("#Toggle");
 
+    //button click function that takes in arguments depending on button to callback on in event listener goes outside of this event listener
+    arButton.addEventListener("click", () => buttonClick("ar"))
+    smgButton.addEventListener("click", buttonClick)
+    lmgButton.addEventListener("click", buttonClick)
+    marksmanButton.addEventListener("click", buttonClick)
+    sniperButton.addEventListener("click", buttonClick)
+    shotgunButton.addEventListener("click", buttonClick)
+    pistolButton.addEventListener("click", buttonClick)
+    menuButton.addEventListener("click", buttonClick)
+
     console.log(document.getElementById('primary').innerHTML)
-    console.log(pistolButton)
     retrieveData();
 })
 
@@ -39,7 +50,32 @@ function initializeWeapons(weapons){
 function initializeBackpack(items){
     [...document.getElementsByClassName('item-box')].map(i=>{
         i.innerHTML = `<img class = 'item-image' src="${items.health[2].image}" alt ="${items.health[0].name}"></img>`
-    })
+    });
+}
+
+function fillHeader(type){
+    function fill(arr){
+        //maps through array and += new html to header
+    };
+    function get(t){
+        fetch('http://localhost:3000/weapons')
+            .then(res => res.json())
+            .then(data => fill(data[t]))
+    };
+    get(type);
+}
+
+function buttonClick(type){
+    //if header is closed, open it and run fillHeader()
+    //if header is open, empty it and run fillHeader()
+    if (weaponMenu.style.display === "none") {
+        console.log("closed")
+        weaponMenu.style.display = "block"
+        fillHeader(type)
+    } else {
+        weaponMenu.innerHTML = ""
+        fillHeader(type)
+    }
 }
 
 //when you click on an item in the item list, run a function that temporarily saves the item's name and image in two variables.
