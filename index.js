@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //button click function that takes in arguments depending on button to callback on in event listener goes outside of this event listener
     arButton.addEventListener("click", () => buttonClick("ar"))
-    smgButton.addEventListener("click", buttonClick)
-    lmgButton.addEventListener("click", buttonClick)
-    marksmanButton.addEventListener("click", buttonClick)
-    sniperButton.addEventListener("click", buttonClick)
-    shotgunButton.addEventListener("click", buttonClick)
-    pistolButton.addEventListener("click", buttonClick)
-    menuButton.addEventListener("click", buttonClick)
+    smgButton.addEventListener("click", () => buttonClick("smg"))
+    lmgButton.addEventListener("click", () => buttonClick("lmg"))
+    marksmanButton.addEventListener("click", () => buttonClick("marksman"))
+    sniperButton.addEventListener("click", () => buttonClick("sniper"))
+    shotgunButton.addEventListener("click", () => buttonClick("shotgun"))
+    pistolButton.addEventListener("click", () => buttonClick("pistol"))
+    menuButton.addEventListener("click", () => buttonClick("ar"))
 
     console.log(document.getElementById('primary').innerHTML)
     retrieveData();
@@ -56,6 +56,13 @@ function initializeBackpack(items){
 function fillHeader(type){
     function fill(arr){
         //maps through array and += new html to header
+        arr.map(e => {
+            const div = `<div class = 'rack-object'>
+            <div class="rack-image"><img src="${e.image}"></div>
+            <div class="text">${e.name}</div>
+            </div>`
+            weaponMenu.innerHTML += div
+        })
     };
     function get(t){
         fetch('http://localhost:3000/weapons')
