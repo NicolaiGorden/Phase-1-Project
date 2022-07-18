@@ -132,6 +132,26 @@
             {
                 "name": "Shield Cell",
                 "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/4/4a/Shield_Cell.svg/revision/latest?cb=20210827060709"
+            },
+            {
+                "name": "Syringe",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/7/75/Syringe.svg/revision/latest?cb=20210827061050"
+            },
+            {
+                "name": "Shield Battery",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/d/de/Shield_Battery.svg/revision/latest?cb=20210827060116"
+            },
+            {
+                "name": "Med Kit",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/6/6b/Med_Kit.svg/revision/latest?cb=20210827055835"
+            },
+            {
+                "name": "Phoenix Kit",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/7/7b/Phoenix_Kit.svg/revision/latest?cb=20220627170107"
+            },
+            {
+                "name": "Ultimate Accelerant",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/e/e5/Ultimate_Accelerant.svg/revision/latest?cb=20210827061018"
             }
         ]
     }

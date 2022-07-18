@@ -1,7 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    const arButton = document.querySelector("#Assault-Rifles");
+    const smgButton = document.querySelector("#SMGs");
+    const lmgButton = document.querySelector("#LMGs");
+    const marksmanButton = document.querySelector("#Marksman-Weapons");
+    const sniperButton = document.querySelector("#Snipers");
+    const shotgunButton = document.querySelector("#Shotguns");
+    const pistolButton = document.querySelector("#Pistols");
+    const menuButton = document.querySelector("#Toggle");
+
     console.log(document.getElementById('primary').innerHTML)
+    console.log(pistolButton)
     retrieveData();
 })
+
 
 function retrieveData(){
     fetch('http://localhost:3000/weapons')
@@ -26,7 +38,7 @@ function initializeWeapons(weapons){
 
 function initializeBackpack(items){
     [...document.getElementsByClassName('item-box')].map(i=>{
-        i.innerHTML = `<img class = 'item-image' src="${items.health[0].image}" alt ="${items.health[0].name}"></img>`
+        i.innerHTML = `<img class = 'item-image' src="${items.health[2].image}" alt ="${items.health[0].name}"></img>`
     })
 }
 
