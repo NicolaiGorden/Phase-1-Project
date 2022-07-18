@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sniperButton.addEventListener("click", () => buttonClick("sniper"))
     shotgunButton.addEventListener("click", () => buttonClick("shotgun"))
     pistolButton.addEventListener("click", () => buttonClick("pistol"))
+    //add seperate close menu button for the following
     menuButton.addEventListener("click", () => buttonClick("ar"))
 
     console.log(document.getElementById('primary').innerHTML)
