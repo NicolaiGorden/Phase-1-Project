@@ -1,4 +1,5 @@
 const weaponMenu = document.querySelector("#menu")
+const menuButton = document.querySelector("#Toggle")
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -9,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const sniperButton = document.querySelector("#Snipers");
     const shotgunButton = document.querySelector("#Shotguns");
     const pistolButton = document.querySelector("#Pistols");
-    const menuButton = document.querySelector("#Toggle");
 
     arButton.addEventListener("click", () => buttonClick("ar"))
     smgButton.addEventListener("click", () => buttonClick("smg"))
@@ -106,6 +106,7 @@ function buttonClick(type){
     if (weaponMenu.style.display === "none") {
         console.log("closed")
         weaponMenu.style.display = "block"
+        menuButton.style.display = "block"
         fillHeader(type)
     } else {
         weaponMenu.innerHTML = ""
@@ -117,5 +118,6 @@ function closeMenu(){
     if(weaponMenu.style.display === "block") {
         weaponMenu.innerHTML = ""
         weaponMenu.style.display = "none"
+        menuButton.style.display = "none"
     }
 }
