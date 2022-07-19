@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sniperButton = document.querySelector("#Snipers");
     const shotgunButton = document.querySelector("#Shotguns");
     const pistolButton = document.querySelector("#Pistols");
+    const healthButton = document.querySelector("#Health")
 
     arButton.addEventListener("click", () => buttonClick("ar"))
     smgButton.addEventListener("click", () => buttonClick("smg"))
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sniperButton.addEventListener("click", () => buttonClick("sniper"))
     shotgunButton.addEventListener("click", () => buttonClick("shotgun"))
     pistolButton.addEventListener("click", () => buttonClick("pistol"))
+    healthButton.addEventListener("click", () => buttonClick("health"))
     menuButton.addEventListener("click", () => closeMenu())
 
     console.log(document.getElementById('primary').innerHTML)
@@ -61,42 +63,55 @@ function fillHeader(type){
             </div>`
             weaponMenu.innerHTML += div
         })
+
         const weapons = document.querySelectorAll(".rack-object")
 
-        for (let i = 0; i < weapons.length; i++){
-            weapons[i].addEventListener("dragstart", () => console.log("drag"))
-            weapons[i].addEventListener("dragend",  () =>{
-                const nodes = document.querySelectorAll( ":hover")
-                const arr = []
-
-                nodes.forEach((e)=>{
-                    arr.push(e.id)
+        if (type === "ar" || type === "smg" || type === "lmg" || type === "marksman" || type === "sniper" || type === "shotgun" || type === "pistol"){
+            for (let i = 0; i < weapons.length; i++){
+                weapons[i].addEventListener("dragstart", () => console.log("drag"))
+                weapons[i].addEventListener("dragend",  () =>{
+                    const nodes = document.querySelectorAll( ":hover")
+                    const arr = []
+    
+                    nodes.forEach((e)=>{
+                        arr.push(e.id)
+                    })
+    
+                    if (arr.includes('primary')){
+                        const primaryBox = document.getElementById('primary')
+                        const name = weapons[i].childNodes[3].innerHTML
+                        const img = weapons[i].childNodes[1].firstChild.src
+    
+                        primaryBox.innerHTML = `<div class="text">${name}</div>
+                        <div class="image"><img src=${img}></div>`
+    
+                    } else if (arr.includes('secondary')){
+                        const secondaryBox = document.getElementById('secondary')
+                        const name = weapons[i].childNodes[3].innerHTML
+                        const img = weapons[i].childNodes[1].firstChild.src
+    
+                        secondaryBox.innerHTML = `<div class="text">${name}</div>
+                        <div class="image"><img src=${img}></div>`
+                    }
                 })
-
-                if (arr.includes('primary')){
-                    const primaryBox = document.getElementById('primary')
-                    const name = weapons[i].childNodes[3].innerHTML
-                    const img = weapons[i].childNodes[1].firstChild.src
-
-                    primaryBox.innerHTML = `<div class="text">${name}</div>
-                    <div class="image"><img src=${img}></div>`
-
-                } else if (arr.includes('secondary')){
-                    const secondaryBox = document.getElementById('secondary')
-                    const name = weapons[i].childNodes[3].innerHTML
-                    const img = weapons[i].childNodes[1].firstChild.src
-
-                    secondaryBox.innerHTML = `<div class="text">${name}</div>
-                    <div class="image"><img src=${img}></div>`
-                }
-            })
+            }
+        } else if (type === "health" || type === "grenades" || type === "ammo") {
+            //for each one, do the same as above except for backpack
         }
+
     };
 
     function get(t){
-        fetch('http://localhost:3000/weapons')
+        //if type is a weapon, fetch weapons, if type is an item, fetch items
+        if (t === "ar" || t === "smg" || t === "lmg" || t === "marksman" || t === "sniper" || t === "shotgun" || t === "pistol"){
+            fetch('http://localhost:3000/weapons')
             .then(res => res.json())
             .then(data => fill(data[t]))
+        } else if (t === "health" || t === "grenades" || t === "ammo"){
+            fetch('http://localhost:3000/items')
+            .then(res => res.json())
+            .then(data => fill(data[t]))
+        }
     };
 
     get(type);
