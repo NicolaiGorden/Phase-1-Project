@@ -57,12 +57,17 @@ function fillHeader(type){
     function fill(arr){
         //maps through array and += new html to header
         arr.map(e => {
-            const div = `<div class = 'rack-object'>
-            <div class="rack-image"><img src="${e.image}"></div>
+            const div = `<div class = 'rack-object' draggable="true">
+            <div class="rack-image"><img draggable="false" src="${e.image}"></div>
             <div class="text">${e.name}</div>
             </div>`
             weaponMenu.innerHTML += div
         })
+        const weapons = document.querySelectorAll(".rack-object")
+
+        for (let i = 0; i < weapons.length; i++){
+            weapons[i].addEventListener("dragstart", () => console.log("drag"))
+        }
     };
     function get(t){
         fetch('http://localhost:3000/weapons')
