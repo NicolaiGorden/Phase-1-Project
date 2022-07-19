@@ -66,6 +66,7 @@ function fillHeader(type){
 
         const weapons = document.querySelectorAll(".rack-object")
 
+        //for weapons
         if (type === "ar" || type === "smg" || type === "lmg" || type === "marksman" || type === "sniper" || type === "shotgun" || type === "pistol"){
             for (let i = 0; i < weapons.length; i++){
                 weapons[i].addEventListener("dragstart", () => console.log("drag"))
@@ -95,14 +96,17 @@ function fillHeader(type){
                     }
                 })
             }
+        //for backpack items
         } else if (type === "health" || type === "grenades" || type === "ammo") {
-            //for each one, do the same as above except for backpack
             for (let i = 0; i < weapons.length; i++){
                 weapons[i].addEventListener("dragstart", () => console.log("drag"))
                 weapons[i].addEventListener("dragend",  () =>{
                     const nodes = document.querySelectorAll(":hover")
                     const arr = []
-                    console.log(nodes)
+                    nodes.forEach((e)=>{
+                        arr.push(e.id)
+                    })
+                    console.log(arr)
                 })
             }
         }
@@ -110,7 +114,6 @@ function fillHeader(type){
     };
 
     function get(t){
-        //if type is a weapon, fetch weapons, if type is an item, fetch items
         if (t === "ar" || t === "smg" || t === "lmg" || t === "marksman" || t === "sniper" || t === "shotgun" || t === "pistol"){
             fetch('http://localhost:3000/weapons')
             .then(res => res.json())
