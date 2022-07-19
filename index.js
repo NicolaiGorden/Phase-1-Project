@@ -50,7 +50,7 @@ function initializeWeapons(weapons){
 
 function initializeBackpack(items){
     [...document.getElementsByClassName('item-box')].map(i=>{
-        i.innerHTML = `<img class = 'item-image' src="${items.health[2].image}" alt ="${items.health[0].name}"></img>`
+        i.innerHTML = `<img class = 'item-image' src="${items.health[2].image}" alt ="${items.health[2].name}"></img>`
     });
 }
 
@@ -103,14 +103,24 @@ function fillHeader(type){
                 weapons[i].addEventListener("dragend",  () =>{
                     const nodes = document.querySelectorAll(":hover")
                     const arr = []
+
                     nodes.forEach((e)=>{
                         arr.push(e.id)
                     })
-                    console.log(arr)
+
+                    const currentSlot = document.getElementById(arr.join(''))
+
+
+                    if (currentSlot.id.includes('slot')){
+                        const slot = document.getElementById(currentSlot.id)
+                        const img = weapons[i].childNodes[1].firstChild.src
+                        const name = weapons[i].childNodes[3].innerHTML
+                        console.log(name)
+                        slot.innerHTML = `<img class = 'item-image' src="${img}" alt ="${name}"></img>`
+                    }
                 })
             }
         }
-
     };
 
     function get(t){
