@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sniperButton.addEventListener("click", () => buttonClick("sniper"))
     shotgunButton.addEventListener("click", () => buttonClick("shotgun"))
     pistolButton.addEventListener("click", () => buttonClick("pistol"))
-    //add seperate close menu button for the following
-    menuButton.addEventListener("click", () => buttonClick("ar"))
+    menuButton.addEventListener("click", () => closeMenu())
 
     console.log(document.getElementById('primary').innerHTML)
     retrieveData();
@@ -83,6 +82,13 @@ function buttonClick(type){
     } else {
         weaponMenu.innerHTML = ""
         fillHeader(type)
+    }
+}
+
+function closeMenu(){
+    if(weaponMenu.style.display === "block") {
+        weaponMenu.innerHTML = ""
+        weaponMenu.style.display = "none"
     }
 }
 
