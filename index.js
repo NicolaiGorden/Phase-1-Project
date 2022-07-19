@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const pistolButton = document.querySelector("#Pistols");
     const menuButton = document.querySelector("#Toggle");
 
-    //button click function that takes in arguments depending on button to callback on in event listener goes outside of this event listener
     arButton.addEventListener("click", () => buttonClick("ar"))
     smgButton.addEventListener("click", () => buttonClick("smg"))
     lmgButton.addEventListener("click", () => buttonClick("lmg"))
@@ -55,7 +54,6 @@ function initializeBackpack(items){
 
 function fillHeader(type){
     function fill(arr){
-        //maps through array and += new html to header
         arr.map(e => {
             const div = `<div class = 'rack-object' draggable="true">
             <div class="rack-image"><img draggable="false" src="${e.image}"></div>
@@ -67,19 +65,44 @@ function fillHeader(type){
 
         for (let i = 0; i < weapons.length; i++){
             weapons[i].addEventListener("dragstart", () => console.log("drag"))
+            weapons[i].addEventListener("dragend",  () =>{
+                const nodes = document.querySelectorAll( ":hover")
+                const arr = []
+
+                nodes.forEach((e)=>{
+                    arr.push(e.id)
+                })
+
+                if (arr.includes('primary')){
+                    const primaryBox = document.getElementById('primary')
+                    const name = weapons[i].childNodes[3].innerHTML
+                    const img = weapons[i].childNodes[1].firstChild.src
+
+                    primaryBox.innerHTML = `<div class="text">${name}</div>
+                    <div class="image"><img src=${img}></div>`
+
+                } else if (arr.includes('secondary')){
+                    const secondaryBox = document.getElementById('secondary')
+                    const name = weapons[i].childNodes[3].innerHTML
+                    const img = weapons[i].childNodes[1].firstChild.src
+
+                    secondaryBox.innerHTML = `<div class="text">${name}</div>
+                    <div class="image"><img src=${img}></div>`
+                }
+            })
         }
     };
+
     function get(t){
         fetch('http://localhost:3000/weapons')
             .then(res => res.json())
             .then(data => fill(data[t]))
     };
+
     get(type);
 }
 
 function buttonClick(type){
-    //if header is closed, open it and run fillHeader()
-    //if header is open, empty it and run fillHeader()
     if (weaponMenu.style.display === "none") {
         console.log("closed")
         weaponMenu.style.display = "block"
@@ -96,6 +119,3 @@ function closeMenu(){
         weaponMenu.style.display = "none"
     }
 }
-
-//when you click on an item in the item list, run a function that temporarily saves the item's name and image in two variables.
-//that way you can target those variables while dragging, and they will only take up space for a second.
