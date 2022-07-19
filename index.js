@@ -97,6 +97,14 @@ function fillHeader(type){
             }
         } else if (type === "health" || type === "grenades" || type === "ammo") {
             //for each one, do the same as above except for backpack
+            for (let i = 0; i < weapons.length; i++){
+                weapons[i].addEventListener("dragstart", () => console.log("drag"))
+                weapons[i].addEventListener("dragend",  () =>{
+                    const nodes = document.querySelectorAll(":hover")
+                    const arr = []
+                    console.log(nodes)
+                })
+            }
         }
 
     };
