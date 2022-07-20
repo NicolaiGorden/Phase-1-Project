@@ -125,6 +125,8 @@ body, html {
   overflow-x: auto;
   white-space: nowrap;
   border-radius: 15px 50px;
+  font-family: 'Teko', sans-serif;
+  font-size: 30px
 }
 
 .rack-object{
