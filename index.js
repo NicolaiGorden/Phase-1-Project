@@ -14,20 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const grenadesButton = document.querySelector("#Grenades");
     const ammoButton = document.querySelector("#Ammo");
 
-    arButton.addEventListener("click", () => buttonClick("ar"))
-    smgButton.addEventListener("click", () => buttonClick("smg"))
-    lmgButton.addEventListener("click", () => buttonClick("lmg"))
-    marksmanButton.addEventListener("click", () => buttonClick("marksman"))
-    sniperButton.addEventListener("click", () => buttonClick("sniper"))
-    shotgunButton.addEventListener("click", () => buttonClick("shotgun"))
-    pistolButton.addEventListener("click", () => buttonClick("pistol"))
-    healthButton.addEventListener("click", () => buttonClick("health"))
-    grenadesButton.addEventListener("click", () => buttonClick("grenades"))
-    ammoButton.addEventListener("click", () => buttonClick("ammo"))
-    menuButton.addEventListener("click", () => closeMenu())
+    const buttons = [arButton, smgButton, lmgButton, marksmanButton, sniperButton, shotgunButton, pistolButton, healthButton, grenadesButton, ammoButton]
+    const buttonArr = ["ar", "smg", "lmg", "marksman", "sniper", "shotgun", "pistol", "health", "grenades", "ammo"]
 
-    console.log(document.getElementById('primary').innerHTML)
+    buttonEvents(buttonArr);
+    menuButton.addEventListener("click", () => closeMenu())
     retrieveData();
+
+    function buttonEvents(buttName) {
+        //haha butt
+        buttName.map((e, i) => {
+            buttons[i].addEventListener("click", () => buttonClick(e))
+        })
+    }
+    
 })
 
 
