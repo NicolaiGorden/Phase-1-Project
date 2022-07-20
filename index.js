@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const sniperButton = document.querySelector("#Snipers");
     const shotgunButton = document.querySelector("#Shotguns");
     const pistolButton = document.querySelector("#Pistols");
-    const healthButton = document.querySelector("#Health")
+    const healthButton = document.querySelector("#Health");
+    const grenadesButton = document.querySelector("#Grenades");
+    const ammoButton = document.querySelector("#Ammo");
 
     arButton.addEventListener("click", () => buttonClick("ar"))
     smgButton.addEventListener("click", () => buttonClick("smg"))
@@ -20,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     shotgunButton.addEventListener("click", () => buttonClick("shotgun"))
     pistolButton.addEventListener("click", () => buttonClick("pistol"))
     healthButton.addEventListener("click", () => buttonClick("health"))
+    grenadesButton.addEventListener("click", () => buttonClick("grenades"))
+    ammoButton.addEventListener("click", () => buttonClick("ammo"))
     menuButton.addEventListener("click", () => closeMenu())
 
     console.log(document.getElementById('primary').innerHTML)
