@@ -155,10 +155,44 @@
             }
         ],
         "grenades" : [
-
+            {
+                "name": "Frag Grenade",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/c/c6/Frag_Grenade.svg/revision/latest?cb=20210827054227"
+            },
+            {
+                "name": "Thermite Grenade",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/a/ae/Thermite_Grenade.svg/revision/latest?cb=20190810063922"
+            },
+            {
+                "name": "Arc Star",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/d/d8/Arc_Star.svg/revision/latest?cb=20210827054208"
+            }
         ],
         "ammo" : [
-
+            {
+                "name": "Arrows",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/f/fe/Arrows.svg/revision/latest?cb=20220605031500"
+            },
+            {
+                "name": "Energy Ammo",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/2/2d/Energy_Ammo.svg/revision/latest?cb=20220605035002"
+            },
+            {
+                "name": "Heavy Rounds",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/5/55/Heavy_Rounds.svg/revision/latest?cb=20220605031538"
+            },
+            {
+                "name": "Light Rounds",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/a/a5/Light_Rounds.svg/revision/latest?cb=20220605031711"
+            },
+            {
+                "name": "Shotgun Shells",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/4/42/Shotgun_Shells.svg/revision/latest?cb=20220605040015"
+            },
+            {
+                "name": "Sniper Ammo",
+                "image": "https://static.wikia.nocookie.net/apexlegends_gamepedia_en/images/3/3e/Sniper_Ammo.svg/revision/latest?cb=20220605062130"
+            }
         ]
     }
 }
