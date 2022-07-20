@@ -31,14 +31,7 @@ body, html {
     border-radius: 25px;
     margin:0;
     padding:0;
-    background: #777777;
-    background: repeating-linear-gradient(
-  45deg,
-  #bebebe,
-  #bebebe 15px,
-  #979797 15px,
-  #979797 30px
-);
+    background-color: #bebebe;
     padding: 20px;
     width: 50px;
     height: 50px;
