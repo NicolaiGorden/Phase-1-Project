@@ -6,7 +6,7 @@ A simple, drag and drop program for planning your Apex Legends loudout.
 
 1. Run json server.
 2. Open index.html in browser.
-3. Click on the buttons at the top of the page to open up weapon and item racks. Drag and drop weapons and items onto your primary and secondary weapon slots or backpack item slots.
+3. Click on the buttons at the top of the page to open up weapon and item racks. Drag and drop weapons onto the primary and secondary weapon slots, and items like ammo, grenades, and healing items onto the backpack.
 
 ## ROADMAP
 
